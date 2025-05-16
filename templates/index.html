@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mark 1 Code Generator</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background-color: #1e293b;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    label {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0ea5e9;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #7dd3fc;
+    }
+
+    pre {
+      background-color: #1e293b;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid #334155;
+      max-width: 90vw;
+    }
+
+    p {
+      word-wrap: break-word;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Mark 1 Code Generator</h1>
+
+  <form method="POST" action="/">
+    <label for="prompt">Enter a prompt:</label>
+    <input type="text" id="prompt" name="prompt" placeholder="e.g., Write a Python function to reverse a string" required>
+    <button type="submit">Generate Code</button>
+  </form>
+
+  {% if prompt %}
+    <h2>📝 Prompt:</h2>
+    <p>{{ prompt }}</p>
+
+    <h2>📄 Generated Code:</h2>
+    <pre>{{ generated_code }}</pre>
+  {% endif %}
+</body>
+</html>
