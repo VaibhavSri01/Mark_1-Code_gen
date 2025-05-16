@@ -1,0 +1,4 @@
+Flask
+gunicorn
+google-generativeai
+# aur jo bhi packages use kar rahe ho wo yahan likho
